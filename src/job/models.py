@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -14,7 +15,7 @@ def image_upload(instance, filename):
     return "jobsUsersImages/%s.%s"%(instance.id, exetention)
 
 class Job(models.Model):
-
+    owner           = models.ForeignKey(User,related_name='job_owner', on_delete=models.CASCADE)
     title           = models.CharField(max_length=100,null=True)
     jobT            = models.CharField(max_length=15, choices=job_choices,null=True)
     description     = models.TextField(max_length=1000,null=True)
@@ -39,6 +40,19 @@ class Job(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return self.name
+
+class Cv_Reader(models.Model):
+    job        = models.ForeignKey(Job,related_name='applay_job', on_delete=models.CASCADE)
+    name       = models.CharField(max_length=50,null=True)
+    email      = models.EmailField(max_length=100,null=True)
+    website    = models.URLField(max_length=50,null=True)
+    upload_cv  = models.FileField(upload_to="UserCv/")
+    letter     = models.TextField(max_length=400, null=True)
+    created_ad = models.DateTimeField(auto_now=True,null=True)
+
 
     def __str__(self):
         return self.name
