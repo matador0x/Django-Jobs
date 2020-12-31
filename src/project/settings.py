@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'bootstrap4',
     'django_filters',
 
+    ## API APPS
+    'rest_framework',
+
+
 ]
 
 MIDDLEWARE = [
@@ -139,3 +143,12 @@ MEDIA_URL = '/media/'
 #     BASE_DIR / "static",
 #     '/home/mohamed/Web_Development/Django/jobs/src/media/',
 # ]
+
+## EMAIL CONFIGRATIONS
+
+EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST          = 'smtp.gmail.com'
+EMAIL_HOST_USER     = 'manofcity1894@gmail.com'
+EMAIL_HOST_PASSWORD = 'vellxrapewqyctok'
+EMAIL_USE_TLS       = True
+EMAIL_PORT          = '587'

@@ -46,7 +46,6 @@ def profile_edit(request):
             myprofile = profileForm.save(commit=False)
             myprofile.user = request.user
             myprofile.save()
-            print('save done')  
             return redirect(reverse('profile')) 
 
     else:

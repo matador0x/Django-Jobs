@@ -26,6 +26,7 @@ urlpatterns = [
     path('job/', include('job.urls', namespace='jobs')),
     path('contact-us/', include('contact.urls', namespace='contacts')),
     path('', include('home.urls', namespace='home')),
+    path('api-auth/', include('rest_framework.urls'))
 
 
 ] 
