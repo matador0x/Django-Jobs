@@ -1,1 +1,3 @@
 # Django-Jobs
+
+Description: I built This Website From scratch Using Python, Django Framework I add some features like in browse jobs page I add Job Listing, apply for a job If I click on Apply now button will redirect me to the job details page also I can add my details and upload file also I add Filters like if I write in the Title field software This will filter all jobs and output just jobs has "Software" word in the title also I add a contact form to get in touch with users login panel & Register and ability for users to change his information and also I used RESTAPI, I know This, not a big project this just for trining
